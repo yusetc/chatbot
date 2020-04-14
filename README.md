@@ -25,14 +25,14 @@ In your local environment you need add this virtual host domain like this:
 
 ### Linux Environment
 If you work with a Linux environment you can ignore the vagrant configuration and just need
-installed docker & docker-compose (https://docs.docker.com/compose/install/) and finally 
+installed **docker & docker-compose** (https://docs.docker.com/compose/install/) and finally 
 in the project root folder execute:
 ````
 sudo docker-compose up -d
 ````
 
 ### Symfony configuration
-In the app folder you need to run:
+In the **app** folder you need to run:
 ````
 composer install  
 ````
