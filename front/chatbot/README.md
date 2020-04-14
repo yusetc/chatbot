@@ -60,5 +60,5 @@ Without the [currency-code] shows actual currency for the user balance and set a
 
 **:exchange** (currency-code-from) (currency-code-to) (amount)
 
-This an exchange tool for convert any money amount from one currency to another, using updated rates from FixerIO API.  
+This is an exchange tool for convert any money amount from one currency to another, using updated rates from FixerIO API.  
 
