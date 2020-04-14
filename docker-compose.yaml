@@ -22,7 +22,6 @@ services:
       target: production
     container_name: php
     environment:
-      - maildev_host=maildev
       - APP_ENV=prod
     networks:
       - app
