@@ -23,7 +23,7 @@ npm run lint
 ```
 
 ### Commands documentation
-#### After configure the app and run it, you can operate with the app using this commands:
+#### After configure the app and run it, you can operate with the app using these commands:
 
 
 **:help**
