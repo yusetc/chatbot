@@ -1,11 +1,13 @@
 # Frontend Vuejs SPA for Bank Operations Chatbot
 
 ## Project setup
+In order to install the project dependencies you need an update nodejs installation with npm installer tool.
+After check the requirements just run:
 ```
 npm install
 ```
 ### Configuration
-- Edit .env file to configure API endpoint.
+- Edit .env file to configure API endpoint to match with the Project Rest API.
 
 ### Compiles and hot-reloads for development
 ```
