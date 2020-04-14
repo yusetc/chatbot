@@ -1,4 +1,4 @@
-# Bank Operations Chatbot
+# Frontend Vuejs SPA for Bank Operations Chatbot
 
 ## Project setup
 ```
