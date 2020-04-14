@@ -58,7 +58,7 @@ Decrement the account balance using the "amount" value, if [currency-code] is sp
 
 Without the [currency-code] shows actual currency for the user balance and set a new currency if this parameter is specified
 
-**:exchange** (currency-code-from) (currency-code-to) (amount)
+**:exchange (currency-code-from) (currency-code-to) (amount)**
 
 This is an exchange tool for convert any money amount from one currency to another, using updated rates from FixerIO API.  
 
