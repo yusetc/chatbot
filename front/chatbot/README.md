@@ -1,9 +1,11 @@
-# chatbox
+# Bank Operations Chatbot
 
 ## Project setup
 ```
 npm install
 ```
+### Configuration
+- Edit .env file to configure API endpoint.
 
 ### Compiles and hot-reloads for development
 ```
