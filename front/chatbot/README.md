@@ -22,5 +22,43 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Commands documentation
+#### After configure the app and run it, you can operate with the app using this commands:
+
+
+**:help**
+
+Shows commands documentation, if the user is not logged in then only shows log in and register help.
+
+**:register**
+
+Shows modal window for user registration.
+
+**:login**
+
+Shows modal window for user log in.
+
+**:logout**
+
+Log out the user.
+
+**:balance [currency-code]**
+
+Shows actual account balance, if [country-code] is specified then shows the balance converted to this currency
+
+**:deposit (amount) [currency-code]**
+
+Increment the account balance using the "amount" value, if [currency-code] is specified the is used as base currency to increment the balance.
+ 
+**:withdraw (amount) [currency-code]**
+
+Decrement the account balance using the "amount" value, if [currency-code] is specified the is used as base currency to increment the balance.
+
+**:currency [currency-code]**
+
+Without the [currency-code] shows actual currency for the user balance and set a new currency if this parameter is specified
+
+**:exchange** (currency-code-from) (currency-code-to) (amount)
+
+This an exchange tool for convert any money amount from one currency to another, using updated rates from FixerIO API.  
+

@@ -1,4 +1,5 @@
 # Bank Operations Chatbot App
+Symfony Rest API for bank operations and Vuejs SPA for chatbot interaction 
 
 ## Frontend SPA Documentation
 - [Frontend SPA](front/chatbot/README.md)
