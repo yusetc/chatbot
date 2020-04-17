@@ -31,6 +31,69 @@ in the project root folder execute:
 sudo docker-compose up -d
 ````
 
+### MacOSX environment
+Since shared folders in Docker with MacOSX need to be defined (https://docs.docker.com/docker-for-mac/osxfs) or use defaults ones in order to persist data from containers like MySQL you need to modify this configuration for docker environment.
+By default, you can share files in /Users/, /Volumes/, /private/, and /tmp directly, so the easy way is to create a subfolder inside this shared folder, Ex.
+````
+mkdir /Users/[your_username]/mysql
+````
+Then, modify the file [docker-compose.override.yaml](docker-compose.override.yaml) changing the **volumes** directive in mysql container according the folder create above:
+````
+volumes:
+  - /Users/[your_username]/mysql:/var/lib/mysql
+````
+
+Also, if you don't want to persist mysql data you just need to create a temporal volume and the [docker-compose.override.yaml](docker-compose.override.yaml) will be like this:
+````
+version: '3.4'
+services:
+  apache:
+    volumes:
+      - ./infrastructure/containers/apache/config/vhost:/etc/apache2/sites-enabled
+      - ./app:/var/www/app
+  php:
+    build:
+      target: development
+    image: php:local
+    volumes:
+      - ./app:/var/www/app
+      - /home/vagrant:/home/vagrant
+    environment:
+      - APP_ENV=dev
+    depends_on:
+      - mysql
+  composer:
+    build:
+      context: ./
+      dockerfile: ./infrastructure/containers/php/Dockerfile
+      target: vendor
+    container_name: composer
+    volumes:
+      - ./app:/var/www/app
+  mysql:
+    image: mariadb:10.0.17
+    container_name: mysql
+    networks:
+      - app
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_volume:/var/lib/mysql
+    command:
+      - "--default-authentication-plugin=mysql_native_password"
+      - "--lower_case_table_names=1"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: symfony
+      MYSQL_USER: symfony
+      MYSQL_PASSWORD: symfony
+networks:
+  app:
+    driver: bridge
+volumes:
+  mysql_volume:
+````
+
 ### Symfony configuration
 In the **app** folder you need to run:
 ````
